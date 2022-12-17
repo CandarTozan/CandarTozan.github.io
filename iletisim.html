@@ -26,10 +26,10 @@
                         <a class="nav-link" href="#">Albüm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Harita</a>
+                        <a class="nav-link" href="map.html">Harita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                        <a class="nav-link active" href="#">İletişim</a>
                     </li>
                 </ul>
             </div>
@@ -38,34 +38,28 @@
             <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item" aria-current="page"><a href="index.html">Ana Sayfa</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Harita</li>
+                  <li class="breadcrumb-item active" aria-current="page">İletişim</li>
                 </ul>
               </nav>
         </div>
 
-        <div>
-            <h4 style="text-align: center;">Haritadaki Konumunuz</h4>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyDs0gk7ABHZBsw257PfCiOmwJxEV5u6dxc"></script>
-            <div id="map"></div>
-            <script>
-                navigator.geolocation.getCurrentPosition(showPosition);
-            
-                function showPosition(position) {
-                  var lat = position.coords.latitude;
-                  var lon = position.coords.longitude;
-                  var coord = lat + "," + lon;
-            
-                  var map = new google.maps.Map(document.getElementById("map"), {
-                    center: new google.maps.LatLng(lat, lon),
-                    zoom: 13
-                  });
-                  var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(lat, lon),
-                    map: map
-                  });
-                }
-              </script>
-            
+        <div class="container mt-3">
+            <h3>Bizimle iletişime geçmek için lütfen aşağıyı doldurun.</h3>
+            <form action="">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Adınız">
+                    <input type="text" class="form-control" placeholder="Soyadınız">
+                  </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="email" placeholder="E-posta Adresiniz Girin" name="email">
+                    <label for="email">E-posta Adresiniz</label>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="comment">Mesajınız:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Gönder</button>
+              </form>
         </div>
             
         <div class="mt-5 p-4 bg-dark text-white text-center">
