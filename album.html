@@ -23,10 +23,10 @@
                         <a class="nav-link" href="index.html">Ana Sayfa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="album.html">Albüm</a>
+                        <a class="nav-link active" href="album.html">Albüm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="map.html">Harita</a>
+                        <a class="nav-link" href="map.html">Harita</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="iletisim.html">İletişim</a>
@@ -34,38 +34,9 @@
                 </ul>
             </div>
         </nav>
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item" aria-current="page"><a href="index.html">Ana Sayfa</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Harita</li>
-                </ul>
-              </nav>
-        </div>
 
-        <div class="container">
-            <h4 style="text-align: center;">Haritadaki Konumunuz</h4>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyDs0gk7ABHZBsw257PfCiOmwJxEV5u6dxc"></script>
-            <div id="map"></div>
-            <script>
-                navigator.geolocation.getCurrentPosition(showPosition);
-            
-                function showPosition(position) {
-                  var lat = position.coords.latitude;
-                  var lon = position.coords.longitude;
-                  var coord = lat + "," + lon;
-            
-                  var map = new google.maps.Map(document.getElementById("map"), {
-                    center: new google.maps.LatLng(lat, lon),
-                    zoom: 13
-                  });
-                  var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(lat, lon),
-                    map: map
-                  });
-                }
-              </script>
-            
+        <div class="container mt-5">
+                        
         </div>
             
         <div class="mt-5 p-4 bg-dark text-white text-center">
